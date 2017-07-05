@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archieven: 2017/6 | Hexo</title>
+  <title>用VS编译C++的一些坑 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="snowyjune973.github.io/archives/2017/06/index.html">
+  <meta name="description" content="1. map和unordered_map存取some_iterator-&amp;gt;second不能用M.at(some_iterator-&amp;gt;first)，只能用M[some_iterator-&amp;gt;first]，否则会导致Out of range错误。前者在G++下可以正常执行。">
+<meta name="keywords" content="Visual Studio,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用VS编译C++的一些坑">
+<meta property="og:url" content="snowyjune973.github.io/2017/07/05/VS-Compiler-tips/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. map和unordered_map存取some_iterator-&amp;gt;second不能用M.at(some_iterator-&amp;gt;first)，只能用M[some_iterator-&amp;gt;first]，否则会导致Out of range错误。前者在G++下可以正常执行。">
+<meta property="og:updated_time" content="2017-07-05T06:47:28.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="用VS编译C++的一些坑">
+<meta name="twitter:description" content="1. map和unordered_map存取some_iterator-&amp;gt;second不能用M.at(some_iterator-&amp;gt;first)，只能用M[some_iterator-&amp;gt;first]，否则会导致Out of range错误。前者在G++下可以正常执行。">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,77 +64,54 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/29/GF-FGF-Compare/" class="archive-article-date">
-  <time datetime="2017-06-29T03:09:28.000Z" itemprop="datePublished">Jun 29</time>
+        <section id="main"><article id="post-VS-Compiler-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/05/VS-Compiler-tips/" class="article-date">
+  <time datetime="2017-07-05T06:45:27.000Z" itemprop="datePublished">2017-07-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/GF-FGF-Compare/">Guided Filter和Fast Guided Filter的比较</a>
+    <h1 class="article-title" itemprop="name">
+      用VS编译C++的一些坑
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/28/CMake-Learning/" class="archive-article-date">
-  <time datetime="2017-06-28T10:27:48.000Z" itemprop="datePublished">Jun 28</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/CMake-Learning/">CMake使用学习</a>
-    </h1>
-  
+        <p>1. map和unordered_map存取some_iterator-&gt;second不能用M.at(some_iterator-&gt;first)，只能用M[some_iterator-&gt;first]，否则会导致Out of range错误。前者在G++下可以正常执行。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/28/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-28T09:58:00.408Z" itemprop="datePublished">Jun 28</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/hello-world/">Hello World</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="snowyjune973.github.io/2017/07/05/VS-Compiler-tips/" data-id="cj4qn5igo00030g4pa4sy3cqs" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/05/OpenCL-Learning-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">OpenCL学习(0)</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
