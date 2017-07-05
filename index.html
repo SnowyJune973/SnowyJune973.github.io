@@ -61,6 +61,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-OpenCL-Learning-0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/05/OpenCL-Learning-0/" class="article-date">
+  <time datetime="2017-07-05T04:57:10.000Z" itemprop="datePublished">2017-07-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/OpenCL-Learning-0/">OpenCL学习(0)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OpenCL 工作的流程：</p>
+<ul>
+<li>寻找所有可用的Platform（Intel，AMD，NVIDIA等），一个Platform对应一个OpenCL编译器</li>
+<li>选择一个Platform，在这个Platform上建立一个Context（直译为上下文，Platform与Kernel之间交换数据的中间层？）</li>
+<li>在Platform上建立一个或几个可用的Device</li>
+</ul>
+<ul>
+<li>建立一个Program对象，读入Kernel程序</li>
+<li>在指定的Device上编译指定的Program里的指定的Kernel程序</li>
+<li>为Kernel程序创建OpenCL内存对象（一维Buffer，二维及以上有Image，Texture等等）</li>
+<li>把C++程序中的数据映射到OpenCL内存对象</li>
+</ul>
+<p>要执行某个Kernel程序时要做的：</p>
+<ul>
+<li>设置Kernel程序的参数（用OpenCL内存对象的内容）</li>
+<li><p>把Kernel程序装入Command Queue（每一个Kernel程序使用的内存空间互不干扰）</p>
+</li>
+<li><p>OpenCL把设备的物理多核（等价的）划分成虚拟的n核，同时执行n个kernel</p>
+</li>
+<li><p>把执行结果（表现为Kernel程序里面的某个参数，存在某个OpenCL内存对象里面）读回C++程序中</p>
+</li>
+<li><p>资源回收</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="snowyjune973.github.io/2017/07/05/OpenCL-Learning-0/" data-id="cj4qjme3f0000vg4p417kv1nm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fast-Guided-Filter/">Fast Guided Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Guided-Filter/">Guided Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCL/">OpenCL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-GF-FGF-Compare" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/29/GF-FGF-Compare/" class="article-date">
@@ -144,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="snowyjune973.github.io/2017/06/29/GF-FGF-Compare/" data-id="cj4jfeyd80000zk4pxhnf37ij" class="article-share-link">Share</a>
+      <a data-url="snowyjune973.github.io/2017/06/29/GF-FGF-Compare/" data-id="cj4qjme3k0001vg4pntwgmq72" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fast-Guided-Filter/">Fast Guided Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Guided-Filter/">Guided Filter</a></li></ul>
@@ -190,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="snowyjune973.github.io/2017/06/28/CMake-Learning/" data-id="cj4jfeydi0003zk4p09n3xi2f" class="article-share-link">Share</a>
+      <a data-url="snowyjune973.github.io/2017/06/28/CMake-Learning/" data-id="cj4qjme3o0003vg4pwh9nxt42" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CMake/">CMake</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
@@ -237,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="snowyjune973.github.io/2017/06/28/hello-world/" data-id="cj4jfeydc0001zk4pw94vu1yq" class="article-share-link">Share</a>
+      <a data-url="snowyjune973.github.io/2017/06/28/hello-world/" data-id="cj4qjme3r0004vg4plk30d9j4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +328,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fast-Guided-Filter/">Fast Guided Filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guided-Filter/">Guided Filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fast-Guided-Filter/">Fast Guided Filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Guided-Filter/">Guided Filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCL/">OpenCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
     </div>
   </div>
 
@@ -276,7 +338,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CMake/" style="font-size: 10px;">CMake</a> <a href="/tags/Fast-Guided-Filter/" style="font-size: 10px;">Fast Guided Filter</a> <a href="/tags/Guided-Filter/" style="font-size: 10px;">Guided Filter</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+      <a href="/tags/CMake/" style="font-size: 10px;">CMake</a> <a href="/tags/Fast-Guided-Filter/" style="font-size: 20px;">Fast Guided Filter</a> <a href="/tags/Guided-Filter/" style="font-size: 20px;">Guided Filter</a> <a href="/tags/OpenCL/" style="font-size: 10px;">OpenCL</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
     </div>
   </div>
 
@@ -285,7 +347,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
   </div>
 
@@ -296,6 +358,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/05/OpenCL-Learning-0/">OpenCL学习(0)</a>
+          </li>
         
           <li>
             <a href="/2017/06/29/GF-FGF-Compare/">Guided Filter和Fast Guided Filter的比较</a>

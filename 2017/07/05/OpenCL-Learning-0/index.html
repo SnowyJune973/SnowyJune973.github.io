@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: 笔记 | Hexo</title>
+  <title>OpenCL学习(0) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="snowyjune973.github.io/categories/笔记/index.html">
+  <meta name="description" content="OpenCL 工作的流程：  寻找所有可用的Platform（Intel，AMD，NVIDIA等），一个Platform对应一个OpenCL编译器 选择一个Platform，在这个Platform上建立一个Context（直译为上下文，Platform与Kernel之间交换数据的中间层？） 在Platform上建立一个或几个可用的Device   建立一个Program对象，读入Kernel程序">
+<meta name="keywords" content="OpenCL,Guided Filter,Fast Guided Filter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCL学习(0)">
+<meta property="og:url" content="snowyjune973.github.io/2017/07/05/OpenCL-Learning-0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="OpenCL 工作的流程：  寻找所有可用的Platform（Intel，AMD，NVIDIA等），一个Platform对应一个OpenCL编译器 选择一个Platform，在这个Platform上建立一个Context（直译为上下文，Platform与Kernel之间交换数据的中间层？） 在Platform上建立一个或几个可用的Device   建立一个Program对象，读入Kernel程序">
+<meta property="og:updated_time" content="2017-07-05T05:08:35.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="OpenCL学习(0)">
+<meta name="twitter:description" content="OpenCL 工作的流程：  寻找所有可用的Platform（Intel，AMD，NVIDIA等），一个Platform对应一个OpenCL编译器 选择一个Platform，在这个Platform上建立一个Context（直译为上下文，Platform与Kernel之间交换数据的中间层？） 在Platform上建立一个或几个可用的Device   建立一个Program对象，读入Kernel程序">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,39 +64,77 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/28/CMake-Learning/" class="archive-article-date">
-  <time datetime="2017-06-28T10:27:48.000Z" itemprop="datePublished">Jun 28</time>
+        <section id="main"><article id="post-OpenCL-Learning-0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/05/OpenCL-Learning-0/" class="article-date">
+  <time datetime="2017-07-05T04:57:10.000Z" itemprop="datePublished">2017-07-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/CMake-Learning/">CMake使用学习</a>
+    <h1 class="article-title" itemprop="name">
+      OpenCL学习(0)
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OpenCL 工作的流程：</p>
+<ul>
+<li>寻找所有可用的Platform（Intel，AMD，NVIDIA等），一个Platform对应一个OpenCL编译器</li>
+<li>选择一个Platform，在这个Platform上建立一个Context（直译为上下文，Platform与Kernel之间交换数据的中间层？）</li>
+<li>在Platform上建立一个或几个可用的Device</li>
+</ul>
+<ul>
+<li>建立一个Program对象，读入Kernel程序</li>
+<li>在指定的Device上编译指定的Program里的指定的Kernel程序</li>
+<li>为Kernel程序创建OpenCL内存对象（一维Buffer，二维及以上有Image，Texture等等）</li>
+<li>把C++程序中的数据映射到OpenCL内存对象</li>
+</ul>
+<p>要执行某个Kernel程序时要做的：</p>
+<ul>
+<li>设置Kernel程序的参数（用OpenCL内存对象的内容）</li>
+<li><p>把Kernel程序装入Command Queue（每一个Kernel程序使用的内存空间互不干扰）</p>
+</li>
+<li><p>OpenCL把设备的物理多核（等价的）划分成虚拟的n核，同时执行n个kernel</p>
+</li>
+<li><p>把执行结果（表现为Kernel程序里面的某个参数，存在某个OpenCL内存对象里面）读回C++程序中</p>
+</li>
+<li><p>资源回收</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="snowyjune973.github.io/2017/07/05/OpenCL-Learning-0/" data-id="cj4qjme3f0000vg4p417kv1nm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fast-Guided-Filter/">Fast Guided Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Guided-Filter/">Guided Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCL/">OpenCL</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/29/GF-FGF-Compare/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Guided Filter和Fast Guided Filter的比较</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
